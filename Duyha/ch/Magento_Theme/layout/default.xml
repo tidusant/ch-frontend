@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_src" xsi:type="string">images/my_logo.png</argument>
+                <argument name="logo_width" xsi:type="number">300</argument>
+                <argument name="logo_height" xsi:type="number">34</argument>
+                <argument name="logo_alt" xsi:type="string">Colis</argument>
+            </arguments>
+        </referenceBlock> -->
+
+        <referenceBlock name="top.links">
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                <arguments>
+                    <argument name="logo_img_width" xsi:type="number">189</argument>
+                    <argument name="logo_img_height" xsi:type="number">64</argument>
+                </arguments>
+            </block>
+            <!-- <block class="Magento\Framework\View\Element\Html\Link\Current" name="about-us">
+                <arguments>
+                    <argument name="label" xsi:type="string">About Us</argument>
+                    <argument name="path" xsi:type="string">about-us</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact-us">
+                <arguments>
+                    <argument name="label" xsi:type="string">Contact Us</argument>
+                    <argument name="path" xsi:type="string">contact-us</argument>
+                </arguments>
+            </block> -->
+
+        </referenceBlock>
+        <referenceContainer name="header.panel">
+           
+           <!-- <block class="Magento\Theme\Block\Html\Header\Logo" name="logomobile" template="html/header/logomobile.phtml">
+                <arguments>
+                    <argument name="logo_img_width" xsi:type="number">189</argument>
+                    <argument name="logo_img_height" xsi:type="number">64</argument>
+                </arguments>
+            </block> -->
+        </referenceContainer>
+        <referenceContainer name="content">
+            <!-- 
+                 <block class="Tigren\Bannermanager\Block\Banner" name="bannermanager.custom" before="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">custom</argument>
+                </action>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="discovery.title" template="Magento_Theme::html/home/discovery_title.phtml"/> -->
+        </referenceContainer>
+
+     
+
+
+        <referenceContainer name="footer-container">
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer footer-wrapper">
+                <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="html/footer.phtml"/>
+            </container>
+        </referenceContainer>
+        
+
+        <!-- <move element="minicart" destination="header.panel" before="catalog.topnav"/> -->
+        <!-- <move element="top.search" destination="header.panel" before="catalog.topnav" /> -->
+        <move element="copyright" destination="before.body.end"/>
+        
+        <!-- <move element="catalog.topnav" destination="header.panel" /> -->
+        <referenceBlock name="header" remove="true" />
+        <referenceBlock name="minicart" remove="true" />
+        <referenceBlock name="my-account-link" remove="true" />
+        <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+        <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
+        <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+        <referenceBlock name="my-account-link" remove="true" />   
+        <referenceBlock name="navigation.sections" remove="true" />   
+        
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="top.search" remove="true" />
+        <referenceBlock name="catalog.topnav" remove="true" />
+        <referenceBlock name="breadcrumbs" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="advanced-search-link" remove="true"/>
+    </body>
+</page>

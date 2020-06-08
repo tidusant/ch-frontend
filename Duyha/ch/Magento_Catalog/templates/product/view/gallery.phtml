@@ -1,0 +1,137 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+?>
+
+<?php
+$images = $block->getGalleryImages()->getItems();
+$mainImage = current(array_filter($images, function ($img) use ($block) {
+    return $block->isMainImage($img);
+}));
+
+if (!empty($images) && empty($mainImage)) {
+    $mainImage = $block->getGalleryImages()->getFirstItem();
+}
+
+$helper = $block->getData('imageHelper');
+$mainImageData = $mainImage ?
+    $mainImage->getData('medium_image_url') :
+    $helper->getDefaultPlaceholderUrl('image');
+
+?>
+
+<!-- <div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
+    <img
+        alt="main product photo"
+        class="gallery-placeholder__image"
+        src="<?= /* @noEscape */ $mainImageData ?>"
+    />
+</div> -->
+<div id="hero-slider">
+        <div id="logo" class="mask">
+            <h1 class="logo-text masked">Martin Rohde</h1>
+        </div>
+        <div id="slideshow">
+            <div id="slides-main" class="slides">
+                <?php $k=0;
+                    foreach ($this->getGalleryImages() as $image) {?>
+                    <div class="slide" data-index="<?=$k?>">
+                        <div class="abs-mask">
+                            <div class="slide-image" style="background-image: url( <?=$image->getData('large_image_url')?>)"></div>
+                        </div>
+                    </div>
+                <?php $k++; }?>
+                
+            </div>
+            <div id="slides-aux" class="slides mask">
+                <?php $k=0;
+                    foreach ($this->getGalleryImages() as $image) {?>
+                    <h2 class="slide-title slide" data-index="<?=$k?>">
+                        <?=$image->getLabel()?>
+                    </h2>
+                    <?php $k++; }?>
+            </div>
+        </div>
+        <div id="info">
+            
+               
+                
+            
+            
+        </div>
+        <nav id="slider-nav">
+            <div class="arrows">
+                <div class="arrow prev">
+                   <span class="svg svg-arrow-left">
+                      <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" xml:space="preserve">
+                         <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z" stroke="white" fill="white" ></path>
+                      </svg>
+                      <span class="alt sr-only"></span>
+                   </span>
+                </div>
+                <div class="arrow next">
+                   <span class="svg svg-arrow-right">
+                      <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px" viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve">
+                         <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z" stroke="white" fill="white" ></path>
+                      </svg>
+                      <span class="alt sr-only"></span>
+                   </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<?php 
+    foreach ($this->getGalleryImages() as $image) {?>
+
+        <?php 
+            // $imageItem = new DataObject(
+            //     [
+            //         'thumb' => $image->getData('small_image_url'),
+            //         'img' => $image->getData('medium_image_url'),
+            //         'full' => $image->getData('large_image_url'),
+            //         'caption' => ($image->getLabel() ?: $this->getProduct()->getName()),
+            //         'position' => $image->getData('position'),
+            //         'isMain'   => $this->isMainImage($image),
+            //         'type' => str_replace('external-', '', $image->getMediaType()),
+            //         'videoUrl' => $image->getVideoUrl(),
+            //     ]
+            // );
+    }
+?>
+
+
+
+<script type="text/javascript">
+    require(['jquery','lynxdev'], function($) {
+        $(document).ready(function($) {
+            
+        });
+    });
+    
+
+</script>
+
+<!-- 
+<script type="text/x-magento-init">
+    {
+        "[data-gallery-role=gallery-placeholder]": {
+            "mage/gallery/gallery": {
+                "mixins":["magnifier/magnify"],
+                "magnifierOpts": <?= /* @noEscape */ $block->getMagnifier() ?>,
+                "data": <?= /* @noEscape */ $block->getGalleryImagesJson() ?>,
+                "options": <?= /* @noEscape */ $block->getGalleryOptions()->getOptionsJson() ?>,
+                "fullscreen": <?= /* @noEscape */ $block->getGalleryOptions()->getFSOptionsJson() ?>,
+                 "breakpoints": <?= /* @noEscape */ $block->getBreakpoints() ?>
+            }
+        }
+    }
+</script> -->

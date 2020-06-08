@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+        <remove src="jquery/ui-modules/datepicker.js"/>
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>
+        <attribute name="itemtype" value="http://schema.org/Product" />
+        <attribute name="itemscope" value="itemscope"/>
+        <referenceBlock name="head.components">
+            <block class="Magento\Framework\View\Element\Js\Components" name="checkout_page_head_components" template="Magento_Catalog::js/components.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="page.main.title" remove="true" />
+           
+        <referenceBlock name="root">
+            <arguments>
+                <argument name="add_attribute" xsi:type="string">itemscope itemtype="http://schema.org/Product"</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="breadcrumbs"  remove="true" />
+
+        <!-- <referenceContainer name="content" remove="true" /> -->
+      
+        <container name="product.slideinfo" htmlTag="div" htmlClass="product media" >
+           
+            <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Magento_Catalog::product/view/gallery.phtml">
+                <arguments>
+                    <argument name="gallery_options" xsi:type="object">Magento\Catalog\Block\Product\View\GalleryOptions</argument>
+                    <argument name="imageHelper" xsi:type="object">Magento\Catalog\Helper\Image</argument>
+                </arguments>
+            </block>
+          
+
+        </container>
+
+        <move element="product.slideinfo" destination="main.content"/>
+        <referenceContainer name="content" remove="true" />
+        <referenceContainer name="content.aside" remove="true" />
+        
+    </body>
+</page>

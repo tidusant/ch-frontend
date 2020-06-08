@@ -1,0 +1,25 @@
+
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+<li class="nav item logolink">
+   <!-- <a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+       <img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+            alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+            <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+            <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+       />
+</a> -->
+	<a href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+		<div class="logohex"> 
+	         <span class="icon">CH</span>
+		</div>
+		<div class="logotext">
+			<span class="colis">Colis</span> helsinki
+		</div>
+	</a>
+</li>
+<li class="nav item logolink">
+	<a href="/about-us"><span class="icolinktext icon-user"></span> <span class="logotext linktext"><?=__("About Us")?></span></a>
+</li>
+<li class="nav item logolink mobileshow">
+	<a href="/contact-us"><span class="icolinktext icon-contact_mail"> </span><span class="logotext linktext"><?=__("Contact Us")?></span></a>
+</li>
