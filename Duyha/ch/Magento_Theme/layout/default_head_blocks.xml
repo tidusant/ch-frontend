@@ -13,9 +13,9 @@
         <css src="css/style.css" />
         <font src="fonts/bahnschrift/BAHNSCHRIFT.woff"/>
         <font src="fonts/icomoon.woff"/>
-        
         <font src="fonts/icomoon.ttf"/>
         <font src="fonts/icomoon.eot"/>
+        <remove src="theme.js"/>
         <remove src="mage/utils/compare.js"/>
         <remove src="Magento_Catalog::js/view/compare-products.js" />
         <script src="/livereload.js" src_type="url"></script>

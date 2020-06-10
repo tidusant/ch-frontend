@@ -4,117 +4,16 @@
 font-family: 'Bahnschrift Condensed';
 font-style: normal;
 font-weight: normal;
-src: local('Bahnschrift Condensed'), url('../../bahnschrift/BAHNSCHRIFT1.woff') format('woff');
+src: url('../../fonts/bahnschrift/BAHNSCHRIFT.woff') format('woff'),
+	 url('../../fonts/bahnschrift/BAHNSCHRIFT.ttf') format('truetype'),;
 }
+
 
 
 @font-face {
 font-family: 'Bahnschrift Regular';
 font-style: normal;
 font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT10.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT11.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT12.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT13.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT14.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT2.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT3.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT4.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT5.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT6.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT7.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT8.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT9.woff') format('woff');
-}
-
-
-@font-face {
-font-family: 'Bahnschrift Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Bahnschrift Regular'), url('../../bahnschrift/BAHNSCHRIFT.woff') format('woff');
+src: url('../../fonts/bahnschrift/BAHNSCHRIFT.woff') format('woff'),
+	 url('../../fonts/bahnschrift/BAHNSCHRIFT.ttf') format('truetype'),;
 }
