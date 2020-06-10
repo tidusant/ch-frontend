@@ -9,12 +9,11 @@
        />
 </a> -->
 	<a href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
-		<div class="logohex"> 
-	         <span class="icon">CH</span>
-		</div>
-		<div class="logotext">
-			<span class="colis">Colis</span> helsinki
-		</div>
+		 <img class="imagelogo" src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+            alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+            style="<?php echo $block->getLogoHeight() ? 'height:' . $block->getLogoHeight() . 'px' : '' ?>" />
+         <img class="imagelogomobile" src="<?php echo $block->getViewFileUrl('images/logo-small.png'); ?>" />
+            
 	</a>
 </li>
 <li class="nav item logolink">
