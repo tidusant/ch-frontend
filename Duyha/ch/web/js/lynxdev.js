@@ -245,10 +245,12 @@ function heroSlider() {
         slider.prevbtn.onclick = function() { 
             changeSlide('prev');
         }
+        console.log("call init");
 
     }
 
     const resize = function () {
+        console.log("call resize");
         setHeight(slider.aux, slider.aux.querySelectorAll('.slide-title'));
     }
 
