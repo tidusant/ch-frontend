@@ -113,8 +113,7 @@ $mainImageData = $mainImage ?
 <script type="text/javascript">
     require(['jquery','lynxdev'], function($) {
         $(document).ready(function($) {
-            window.addEventListener('load', heroSlider().init);
-            window.addEventListener("resize", heroSlider().resize);
+            heroSlider().init();
         });
     });
     
