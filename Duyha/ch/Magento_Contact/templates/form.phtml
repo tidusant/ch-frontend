@@ -1,0 +1,311 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Contact\Block\ContactForm $block */
+?>
+
+
+
+
+<form class="registration-form"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+
+    <div class="container main">
+        <div class="text-center">
+            <a href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt(); ?>"><img src="<?php echo $block->getViewFileUrl('images/logo.png'); ?>" alt="Authentic Collection" /></a>
+        </div>
+        <h1 class="text-center">Contact Us</h1>
+        
+            <label class="col-one-half">
+                <span class="label-text">First Name</span>
+                <input type="text" name="firstName">
+            </label>
+            <label class="col-one-half">
+                <span class="label-text">Last Name</span>
+                <input type="text" name="lastName">
+            </label>
+            <label>
+                <span class="label-text">Email</span>
+                <input type="text" name="email">
+            </label>
+            <label>
+                <span class="label-text">Message</span>                
+                <textarea name="message"> </textarea>
+            </label>
+            <label class="checkbox">
+                <span><input type="checkbox" name="newsletter">
+                Sign me up for the newsletter.</span>
+            </label>
+            <div class="text-center">
+                <button class="submit" name="register">Submit</button>
+            </div>
+        
+    </div>
+
+    
+    <div class="container leftcard">
+       
+        <h2 class="text-center">Tuomas Vuolli</h2>        
+        <div>
+            <span class="icolinktext icon-phone"> </span>
+            <span class="label-text"><a href="tel:+358 465 934 120">+358 465 934 120</span>               
+        </div>
+        <div>
+            <span class="icolinktext icon-contact_mail"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-linkedin"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-facebook"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-instagram"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>     
+    </div>
+     <div class="container rightcard">
+       
+        <h2 class="text-center">Tuomas Vuolli</h2>        
+        <div>
+            <span class="icolinktext icon-phone"> </span>
+            <span class="label-text"><a href="tel:+358 465 934 120">+358 465 934 120</span>               
+        </div>
+        <div>
+            <span class="icolinktext icon-contact_mail"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-linkedin"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-facebook"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>
+        <div>
+            <span class="icolinktext icon-instagram"> </span>
+            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+        </div>     
+    </div>
+
+
+    <!-- <fieldset class="fieldset">
+        <legend class="legend"><span><?= $block->escapeHtml(__('Write Us')) ?></span></legend><br />
+        <div class="field note no-label"><?= $block->escapeHtml(__('Jotss us a note and we’ll get back to you as quickly as possible.')) ?></div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Name')) ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('name') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('email') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field telephone">
+            <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+            <div class="control">
+                <input name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('telephone')) ?>" class="input-text" type="text" />
+            </div>
+        </div>
+        <div class="field comment required">
+            <label class="label" for="comment"><span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"><?= $block->escapeHtml($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('comment')) ?></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div> -->
+</form>
+
+
+
+<!-- <?php
+echo $this->getLayout()
+->createBlock('Magento\Cms\Block\Block')
+->setBlockId('contact-us-info')
+->toHtml();
+?> -->
+
+
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        (function($){
+            $.fn.extend({
+                donetyping: function(callback,timeout){
+                    timeout = timeout || 500;
+                    var timeoutReference,
+                        doneTyping = function(el){
+                            if (!timeoutReference) return;
+                            timeoutReference = null;
+                            callback.call(el);
+                        };
+                    return this.each(function(i,el){
+                        var $el = $(el);
+                        $el.is(':input') && $el.on('keyup keypress',function(e){
+                            if (e.type=='keyup' && e.keyCode!=8) return;
+                            if (timeoutReference) clearTimeout(timeoutReference);
+                            timeoutReference = setTimeout(function(){
+                                doneTyping(el);
+                            }, timeout);
+                        }).on('blur',function(){
+                            doneTyping(el);
+                        });
+                    });
+                }
+            });
+        })(jQuery);
+
+        formValidation = {
+            init: function(){
+                this.$form = $('.registration-form');
+                this.$firstName = this.$form.find('input[name="firstName"]');
+                this.$lastName = this.$form.find('input[name="lastName"]');
+                this.$email = this.$form.find('input[name="email"]');
+                this.$message = this.$form.find('textarea[name="message"]');
+                this.$password = this.$form.find('input[name="password"]');
+                this.$passwordToggle = this.$form.find('button.toggle-visibility');
+                this.$submitButton = this.$form.find('button.submit');
+                
+                this.validatedFields = {
+                    firstName: false,
+                    lastName: false,
+                    email: false,
+                    password: false
+                };
+                
+                this.bindEvents();
+            },
+            bindEvents: function(){
+                this.$firstName.donetyping(this.validateFirstNameHandler.bind(this));
+                this.$lastName.donetyping(this.validateLastNameHandler.bind(this));
+                this.$email.donetyping(this.validateEmailHandler.bind(this));
+                this.$message.donetyping(this.validateMessageHandler.bind(this));
+                // this.$password.donetyping(this.validatePasswordHandler.bind(this));
+                // this.$passwordToggle.mousedown(this.togglePasswordVisibilityHandler.bind(this));
+                // this.$passwordToggle.click(function(e){e.preventDefault()});
+                this.$form.submit(this.submitFormHandler.bind(this));
+            },
+            validateFirstNameHandler: function(){
+                this.validatedFields.firstName = this.validateText(this.$firstName);
+            },
+            validateLastNameHandler: function(){
+                this.validatedFields.lastName = this.validateText(this.$lastName);
+            },
+            validateEmailHandler: function(){
+                this.validatedFields.email = this.validateText(this.$email) && this.validateEmail(this.$email);
+            },
+         
+            validateMessageHandler: function(){
+                this.validatedFields.message = this.validateText(this.$message) && this.validateMessage(this.$message);
+            },
+            validatePasswordHandler: function(){
+                this.validatedFields.password = this.validateText(this.$password) && this.validatePassword(this.$password);
+            },
+            togglePasswordVisibilityHandler: function(){
+                var html = '<input type="text" value="'+this.$password.val()+'">';
+                var $passwordParent = this.$password.parent()
+                var saved$password = this.$password.detach();
+                $passwordParent.append(html);
+                this.$passwordToggle.find('span').removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+                this.$passwordToggle.one('mouseup mouseleave', (function(){
+                    $passwordParent.find('input').remove();
+                    $passwordParent.append(saved$password);
+                    this.$passwordToggle.find('span').removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+                }).bind(this));
+            },
+            submitFormHandler: function(e){
+                e.preventDefault();
+                this.validateFirstNameHandler();
+                this.validateLastNameHandler();
+                this.validateEmailHandler();
+                //this.validatePasswordHandler();
+                this.validateMessageHandler();
+                if(this.validatedFields.firstName && this.validatedFields.lastName && this.validatedFields.email && this.validatedFields.message){
+                    // Simulate Ajax loading
+                    this.$submitButton.addClass('loading').html('<span class="loading-spinner"></span>')
+                    setTimeout((function(){
+                        this.$submitButton.removeClass('loading').addClass('success').html('Welcome, '+this.$firstName.val());
+                        this.$submitButton.off('submit');
+                        this.$submitButton.off('click');
+                    }).bind(this), 1500);
+                }else{
+                    this.$submitButton.text('Please Fix the Errors');
+                    setTimeout((function(){
+                        if(this.$submitButton.text() == 'Please Fix the Errors'){
+                            this.$submitButton.text('Submit');
+                        }
+                    }).bind(this), 3000)
+                }
+            },
+            
+            validateText: function($input){
+                $input.parent().removeClass('invalid');
+                $input.parent().find('span.label-text small.error').remove();
+                if($input.val() != ''){
+                    return true;
+                }else{
+                    $input.parent().addClass('invalid');
+                    $input.parent().find('span.label-text').append(' <small class="error">(Field is empty)</small>');
+                    return false;
+                }
+            },
+            validateEmail: function($input){
+                var regEx = /\S+@\S+\.\S+/;
+                $input.parent().removeClass('invalid');
+                $input.parent().find('span.label-text small.error').remove();
+            if(regEx.test($input.val())){
+                    return true;
+                }else{
+                    $input.parent().addClass('invalid');
+                    $input.parent().find('span.label-text').append(' <small class="error">(Email is invalid)</small>');
+                    return false;
+                }
+            },
+            validatePassword: function($input){
+                return true;
+                $input.parent().removeClass('invalid');
+                $input.parent().find('span.label-text small.error').remove();
+                if($input.val().length >= 10){
+                    return true;
+                }else{
+                    $input.parent().addClass('invalid');
+                    $input.parent().find('span.label-text').append(' <small class="error">(Your password must longer than 7 characters)</small>');
+                    return false;
+                }
+            },
+            validateMessage: function($input){                
+                $input.parent().removeClass('invalid');
+                $input.parent().find('span.label-text small.error').remove();
+                if($input.val().length >= 8){
+                    return true;
+                }else{
+                    $input.parent().addClass('invalid');
+                    $input.parent().find('span.label-text').append(' <small class="error">(Your message must longer than 10 characters)</small>');
+                    return false;
+                }
+            }
+        }.init();
+    });
+</script>
