@@ -18,6 +18,6 @@
         <remove src="theme.js"/>
         <remove src="mage/utils/compare.js"/>
         <remove src="Magento_Catalog::js/view/compare-products.js" />
-        <script src="/livereload.js" src_type="url"></script>
+        <!-- <script src="/livereload.js" src_type="url"></script> -->
     </head>
 </page>
