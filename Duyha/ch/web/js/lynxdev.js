@@ -259,4 +259,5 @@ function heroSlider() {
 }
 
 window.addEventListener('load', heroSlider().init);
-window.addEventListener("resize", heroSlider().resize);
+//window.addEventListener("resize", heroSlider().resize);
+window.addEventListener("resize", function(){location.reload();});
