@@ -12,6 +12,8 @@
 ?>
 
 <?php
+$product=$block->getProduct();
+
 $images = $block->getGalleryImages()->getItems();
 $mainImage = current(array_filter($images, function ($img) use ($block) {
     return $block->isMainImage($img);
@@ -37,7 +39,7 @@ $mainImageData = $mainImage ?
 </div> -->
 <div id="hero-slider">
         <div id="logo" class="mask">
-            <h1 class="logo-text masked">Martin Rohde</h1>
+            <h1 class="logo-text masked"><?=$product->getName()?></h1>
         </div>
         <div id="slideshow">
             <div id="slides-main" class="slides">
