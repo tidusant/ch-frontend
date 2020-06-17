@@ -70,7 +70,9 @@
         <!-- <move element="top.search" destination="header.panel" before="catalog.topnav" /> -->
         <move element="copyright" destination="before.body.end"/>
         
+        
         <!-- <move element="catalog.topnav" destination="header.panel" /> -->
+        <referenceBlock name="store_language" remove="true" />
         <referenceBlock name="header" remove="true" />
         <referenceBlock name="minicart" remove="true" />
         <referenceBlock name="my-account-link" remove="true" />

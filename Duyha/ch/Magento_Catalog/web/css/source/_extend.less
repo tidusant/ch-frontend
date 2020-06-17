@@ -67,7 +67,7 @@ body {
   position: relative;
   height: 100vh;
   display: flex;
-  background: #030303;
+  background: #817d6d;
 }
 
 /* line 75, D:/WEB/Projects/Slider/assets/scss/style.scss */
@@ -87,14 +87,15 @@ body {
 /* line 92, D:/WEB/Projects/Slider/assets/scss/style.scss */
 #slides-main:after {
   content: '';
-  background-color: rgba(0, 0, 0, 0.25);
+  //background-color: rgba(0, 0, 0, 0.25);
   z-index: 100;
 }
 
 /* line 99, D:/WEB/Projects/Slider/assets/scss/style.scss */
 #slides-main .slide-image {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat:no-repeat; 
   z-index: -1;
 }
 
@@ -125,7 +126,7 @@ body {
   position: relative;
   flex: 1 1 50%;
   padding: 2rem;
-  background-color: #817d6d;
+  
 }
 
 /* line 128, D:/WEB/Projects/Slider/assets/scss/style.scss */
