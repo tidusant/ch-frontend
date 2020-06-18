@@ -21,30 +21,30 @@
         <div class="text-center">
             <a href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt(); ?>"><img src="<?php echo $block->getViewFileUrl('images/logo.png'); ?>" alt="Authentic Collection" /></a>
         </div>
-        <h1 class="text-center">Contact Us</h1>
+        <h1 class="text-center"><?=__("Contact Us")?></h1>
         
             <label class="col-one-half">
-                <span class="label-text">First Name</span>
+                <span class="label-text"><?=__("First Name")?></span>
                 <input type="text" name="firstName">
             </label>
             <label class="col-one-half">
-                <span class="label-text">Last Name</span>
+                <span class="label-text"><?=__("Last Name")?></span>
                 <input type="text" name="lastName">
             </label>
             <label>
-                <span class="label-text">Email</span>
+                <span class="label-text"><?=__("Email")?></span>
                 <input type="text" name="email">
             </label>
             <label>
-                <span class="label-text">Message</span>                
+                <span class="label-text"><?=__("Message")?></span>                
                 <textarea name="message"> </textarea>
             </label>
             <label class="checkbox">
                 <span><input type="checkbox" name="newsletter">
-                Sign me up for the newsletter.</span>
+                <?=__("Sign me up for the newsletter.")?></span>
             </label>
             <div class="text-center">
-                <button class="submit" name="register">Submit</button>
+                <button class="submit" name="register"><?=__("Submit")?></button>
             </div>
         
     </div>
@@ -63,11 +63,11 @@
         </div>
         <div>
             <span class="icolinktext icon-linkedin"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+            <span class="label-text"><a href="https://linkedin.com/in/tuomasvuolli">linkedin.com/in/tuomasvuolli</a></span>
         </div>
         <div>
             <span class="icolinktext icon-facebook"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
+            <span class="label-text"><a href="http://fb.com/colishelsinki">fb.com/colishelsinki</a></span>
         </div>
         <div>
             <span class="icolinktext icon-instagram"> </span>
@@ -251,10 +251,10 @@ echo $this->getLayout()
                         this.$submitButton.off('click');
                     }).bind(this), 1500);
                 }else{
-                    this.$submitButton.text('Please Fix the Errors');
+                    this.$submitButton.text('<?=__("Please Fix the Errors")?>');
                     setTimeout((function(){
-                        if(this.$submitButton.text() == 'Please Fix the Errors'){
-                            this.$submitButton.text('Submit');
+                        if(this.$submitButton.text() == '<?=__("Please Fix the Errors")?>'){
+                            this.$submitButton.text('<?=__("Submit")?>');
                         }
                     }).bind(this), 3000)
                 }
@@ -267,7 +267,7 @@ echo $this->getLayout()
                     return true;
                 }else{
                     $input.parent().addClass('invalid');
-                    $input.parent().find('span.label-text').append(' <small class="error">(Field is empty)</small>');
+                    $input.parent().find('span.label-text').append(' <small class="error">(<?=__("Field is empty")?>)</small>');
                     return false;
                 }
             },
@@ -279,7 +279,7 @@ echo $this->getLayout()
                     return true;
                 }else{
                     $input.parent().addClass('invalid');
-                    $input.parent().find('span.label-text').append(' <small class="error">(Email is invalid)</small>');
+                    $input.parent().find('span.label-text').append(' <small class="error">(<?=__("Email is invalid")?>)</small>');
                     return false;
                 }
             },
@@ -291,7 +291,7 @@ echo $this->getLayout()
                     return true;
                 }else{
                     $input.parent().addClass('invalid');
-                    $input.parent().find('span.label-text').append(' <small class="error">(Your password must longer than 7 characters)</small>');
+                    $input.parent().find('span.label-text').append(' <small class="error">(<?=__("Your password must longer than 7 characters")?>)</small>');
                     return false;
                 }
             },
@@ -302,7 +302,7 @@ echo $this->getLayout()
                     return true;
                 }else{
                     $input.parent().addClass('invalid');
-                    $input.parent().find('span.label-text').append(' <small class="error">(Your message must longer than 10 characters)</small>');
+                    $input.parent().find('span.label-text').append(' <small class="error">(<?=__("Your message must longer than 10 characters")?>)</small>');
                     return false;
                 }
             }

@@ -439,7 +439,7 @@ body {
 
 /* line 419, D:/WEB/Projects/Slider/assets/scss/style.scss */
 #slides-aux .slide.active {
-  transition: opacity 0.6s 3s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s;
+  transition: opacity 0.6s 0.8s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s;
 }
 
 /* #SLIDESHOW - END */
@@ -508,10 +508,11 @@ body {
  
     width: 96%!important;
   }
-  #slides-main .slide-image {
-    
-    background-size: cover!important;
-    
+  #slides-main .slide-image {    
+    background-size: cover!important;    
+  }
+  #slides-aux .slide.active {
+    transition: opacity 0.6s 3s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.8s!important;
   }
 }
 /* #RESPONSIVE - END*/
