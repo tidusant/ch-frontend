@@ -10,7 +10,7 @@
 
 
 
-<form class="registration-form"
+<form 
       action="<?= $block->escapeUrl($block->getFormAction()) ?>"
       id="contact-form"
       method="post"
@@ -23,81 +23,41 @@
         </div>
         <h1 class="text-center"><?=__("Contact Us")?></h1>
         
-            <label class="col-one-half">
-                <span class="label-text"><?=__("First Name")?></span>
-                <input type="text" name="firstName">
-            </label>
-            <label class="col-one-half">
-                <span class="label-text"><?=__("Last Name")?></span>
-                <input type="text" name="lastName">
-            </label>
-            <label>
-                <span class="label-text"><?=__("Email")?></span>
-                <input type="text" name="email">
-            </label>
-            <label>
-                <span class="label-text"><?=__("Message")?></span>                
-                <textarea name="message"> </textarea>
-            </label>
-            <label class="checkbox">
-                <span><input type="checkbox" name="newsletter">
-                <?=__("Sign me up for the newsletter.")?></span>
-            </label>
-            <div class="text-center">
-                <button class="submit" name="register"><?=__("Submit")?></button>
-            </div>
+        <label class="col-one-half">
+            <span class="label-text"><?=__("First Name")?></span>
+            <input name="name" id="name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('name') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}" />
+        </label>
+        <label class="col-one-half">
+            <span class="label-text"><?=__("Last Name")?></span>
+            <input type="text" name="lastName">
+        </label>
+        <label>
+            <span class="label-text"><?=__("Email")?></span>
+            <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('email') ?: $this->helper(\Magento\Contact\Helper\Data::class)->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+        </label>
+        <label>
+            <span class="label-text"><?=__("Message")?></span>                
+             <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"><?= $block->escapeHtml($this->helper(\Magento\Contact\Helper\Data::class)->getPostValue('comment')) ?></textarea>
+        </label>
+        <label class="checkbox">
+            <span><input type="checkbox" name="newsletter">
+            <?=__("Sign me up for the newsletter.")?></span>
+        </label>
+        <div class="text-center">
+            <button class="submit" name="register"><?=__("Submit")?></button>
+        </div>
         
     </div>
 
+
     
-    <div class="container leftcard">
-       
-        <h2 class="text-center">Tuomas Vuolli</h2>        
-        <div>
-            <span class="icolinktext icon-phone"> </span>
-            <span class="label-text"><a href="tel:+358 465 934 120">+358 465 934 120</span>               
-        </div>
-        <div>
-            <span class="icolinktext icon-contact_mail"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-linkedin"> </span>
-            <span class="label-text"><a href="https://linkedin.com/in/tuomasvuolli">linkedin.com/in/tuomasvuolli</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-facebook"> </span>
-            <span class="label-text"><a href="http://fb.com/colishelsinki">fb.com/colishelsinki</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-instagram"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>     
+
+   <div id="popup-modal">
+    
+    <div class="static-block-message" style="display: none;">
+        sdg
     </div>
-     <div class="container rightcard">
-       
-        <h2 class="text-center">Tuomas Vuolli</h2>        
-        <div>
-            <span class="icolinktext icon-phone"> </span>
-            <span class="label-text"><a href="tel:+358 465 934 120">+358 465 934 120</span>               
-        </div>
-        <div>
-            <span class="icolinktext icon-contact_mail"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-linkedin"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-facebook"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>
-        <div>
-            <span class="icolinktext icon-instagram"> </span>
-            <span class="label-text"><a href="mailto:tuomas.vuolli@colishelsinki.com">tuomas.vuolli@colishelsinki.com</a></span>
-        </div>     
-    </div>
+</div>
 
 
     <!-- <fieldset class="fieldset">
@@ -150,7 +110,9 @@ echo $this->getLayout()
 
 
 <script type="text/javascript">
-    require(['jquery'], function($) {
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/modal'], function($,modal) {
         (function($){
             $.fn.extend({
                 donetyping: function(callback,timeout){
@@ -175,15 +137,19 @@ echo $this->getLayout()
                     });
                 }
             });
+
+
+
+
         })(jQuery);
 
         formValidation = {
             init: function(){
                 this.$form = $('.registration-form');
-                this.$firstName = this.$form.find('input[name="firstName"]');
+                this.$firstName = this.$form.find('input[name="name"]');
                 this.$lastName = this.$form.find('input[name="lastName"]');
                 this.$email = this.$form.find('input[name="email"]');
-                this.$message = this.$form.find('textarea[name="message"]');
+                this.$message = this.$form.find('textarea[name="comment"]');
                 this.$password = this.$form.find('input[name="password"]');
                 this.$passwordToggle = this.$form.find('button.toggle-visibility');
                 this.$submitButton = this.$form.find('button.submit');
@@ -244,12 +210,24 @@ echo $this->getLayout()
                 this.validateMessageHandler();
                 if(this.validatedFields.firstName && this.validatedFields.lastName && this.validatedFields.email && this.validatedFields.message){
                     // Simulate Ajax loading
-                    this.$submitButton.addClass('loading').html('<span class="loading-spinner"></span>')
-                    setTimeout((function(){
-                        this.$submitButton.removeClass('loading').addClass('success').html('Welcome, '+this.$firstName.val());
-                        this.$submitButton.off('submit');
-                        this.$submitButton.off('click');
-                    }).bind(this), 1500);
+                    //this.$submitButton.addClass('loading').html('<span class="loading-spinner"></span>')
+
+                    jQuery.ajax({
+                        type: 'post',
+                        url: '<?php echo $block->getUrl("contact/index/post") ?>',
+                        data: jQuery('#contact-form').serialize(),
+                        cache: false,
+                        showLoader: 'true',
+                        complete: function(response) {
+                            alert(response.responseText);
+                            jQuery('.static-block-message').show();
+                            // this.$submitButton.removeClass('loading');
+                            // this.$submitButton.text('<?=__("Submit")?>');
+                        }
+                    });
+     
+
+
                 }else{
                     this.$submitButton.text('<?=__("Please Fix the Errors")?>');
                     setTimeout((function(){
